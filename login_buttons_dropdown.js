@@ -185,7 +185,11 @@ Template._loginButtonsLoggedOutDropdown.helpers({
     return loginButtonsSession.get('dropdownVisible');
   },
 
-  hasPasswordService: hasPasswordService
+  hasPasswordService: hasPasswordService,
+
+  guestUsername: function () {
+    return Meteor.user().username;
+  }
 });
 
 // return all login services, with password last
