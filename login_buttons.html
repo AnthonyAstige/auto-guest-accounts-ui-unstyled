@@ -14,9 +14,17 @@
           </div>
         {{/if}}
       {{else}}
-        {{> _loginButtonsLoggedIn}}
+        {{#if isGuest}}
+          {{! AutoGuest: Guest's aren't really logged in}}
+          {{> _loginButtonsLoggedOut}}
+        {{/if}}
+        {{#unless isGuest}}
+          {{! AutoGuest: Registered user gets normal buttons}}
+          {{> _loginButtonsLoggedIn}}
+        {{/unless}}
       {{/if}}
     {{else}}
+      {{! AutoGuest: Should never get here}}
       {{> _loginButtonsLoggedOut}}
     {{/if}}
   </div>

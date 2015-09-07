@@ -10,6 +10,13 @@ Template.loginButtons.events({
   }
 });
 
+Template.loginButtons.helpers({
+  isGuest: function () {
+    var user = Meteor.user();
+    return user && user.profile && user.profile.guest;
+  }
+});
+
 Template.registerHelper('loginButtons', function () {
   throw new Error("Use {{> loginButtons}} instead of {{loginButtons}}");
 });
