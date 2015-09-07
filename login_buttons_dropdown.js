@@ -51,6 +51,10 @@ Template._loginButtonsLoggedInDropdownActions.helpers({
     // instead we use the heuristic: if the user has a username or email set.
     var user = Meteor.user();
     return user.username || (user.emails && user.emails[0] && user.emails[0].address);
+  },
+  isGuest: function () {
+    var user = Meteor.user();
+    return user && user.profile && user.profile.guest;
   }
 });
 

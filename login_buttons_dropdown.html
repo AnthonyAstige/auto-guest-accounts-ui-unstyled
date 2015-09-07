@@ -27,15 +27,17 @@
 </template>
 
 <template name="_loginButtonsLoggedInDropdownActions">
-  {{#if allowChangingPassword}}
-    <div class="login-button" id="login-buttons-open-change-password">
-      Change password
-    </div>
-  {{/if}}
+  {{#unless isGuest}}
+    {{#if allowChangingPassword}}
+      <div class="login-button" id="login-buttons-open-change-password">
+        Change password
+      </div>
+    {{/if}}
 
-  <div class="login-button" id="login-buttons-logout">
-    Sign out
-  </div>
+    <div class="login-button" id="login-buttons-logout">
+      Sign out
+    </div>
+  {{/unless}}
 
   {{> _loginButtonsMessages}}
 </template>
