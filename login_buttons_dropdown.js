@@ -434,22 +434,11 @@ var signup = function () {
   if (!matchPasswordAgainIfPresent())
     return;
 
-  // AutoGuest: Instead of creating a new user, update guest user
-  var userId = Meteor.user()._id;
-  var set = {
-	username: options.username,
-	'profile.guest': false
-  };
-  if (options.email) {
-    set.emails = [{ address: options.email, verified: false }];
-  }
-  Meteor.users.update(userId, { $set: set }, {}, function(error) {
+  AutoGuest.createUser(options, function(error) {
     if (error) {
-      loginButtonsSession.errorMessage("Unknown error");
+    	loginButtonsSession.errorMessage(error.reason | "Unknown error");
     } else {
-	  Meteor.call('AutoGuestSetAccountPassword', options.password, function() {
-        loginButtonsSession.closeDropdown();
-      });
+    	loginButtonsSession.closeDropdown();
     }
   });
 };
