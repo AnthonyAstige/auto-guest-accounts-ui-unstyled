@@ -1,3 +1,5 @@
+# Edited for [anthonyastige-auto-guest] (https://github.com/AnthonyAstige/auto-guest)
+
 # accounts-ui-unstyled
 
 A version of `accounts-ui` without the CSS, so that you can add your
