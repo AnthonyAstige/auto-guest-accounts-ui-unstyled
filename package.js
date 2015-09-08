@@ -16,6 +16,9 @@ Package.onUse(function (api) {
   // Accounts.oauth.registerService) exists.
   api.use('accounts-password', {weak: true});
 
+  // AutoGuest support methods
+  api.use('anthonyastige:auto-guest');
+
   api.addFiles([
     'accounts_ui.js',
 
