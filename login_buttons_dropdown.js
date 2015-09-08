@@ -436,7 +436,7 @@ var signup = function () {
 
   AutoGuest.createUser(options, function(error) {
     if (error) {
-    	loginButtonsSession.errorMessage(error.reason | "Unknown error");
+    	loginButtonsSession.errorMessage(error.reason || "Unknown error");
     } else {
     	loginButtonsSession.closeDropdown();
     }
