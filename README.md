@@ -1,4 +1,4 @@
-# Edited for [anthonyastige-auto-guest] (https://github.com/AnthonyAstige/auto-guest)
+# Edited for optional use with [anthonyastige-auto-guest] (https://github.com/AnthonyAstige/auto-guest)
 
 # accounts-ui-unstyled
 
